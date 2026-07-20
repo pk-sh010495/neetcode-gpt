@@ -9,7 +9,7 @@ class Solution:
         # X is (n, m), weights is (m,) -> return (n,) predictions
         # Round to 5 decimal places
         try:
-            predictions = X @ weights
+            predictions = np.matmul(X, weights)
             return np.round(predictions,5)
         except ValueError: #triggered if X.shape[1] != len(weights):
             return 0.0
